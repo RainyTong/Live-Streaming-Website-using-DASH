@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>用dash.js来做直播</title>
+  </head>
+
+  <!-- <style>
+      video {
+        width: 80%;
+        height: 80%;
+      }
+  </style> -->
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.9.1/dash.all.min.js"></script>
+
+  <!-- <video id="videoPlayer" controls width="600"></video>
+
+  <script>
+
+  // let url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
+  let url = "http://localhost:8080/dash/yutong_hi/index.mpd"
+  // let url = "http://localhost:8080/dash/mystream.seg"
+  let player = dashjs.MediaPlayer().create();
+  let videoplayer = document.querySelector("#videoPlayer")
+
+  player.initialize(videoplayer , url, true);
+
+  </script> -->
+
+  <link rel="stylesheet" href="/Users/wangyutong/Repository/store/CS/大三上/计算机网络/project/WYTProj/DPlayer/dist/DPlayer.min.css">
+  <div id="dplayer"></div>
+  <script src="/Users/wangyutong/Repository/store/CS/大三上/计算机网络/project/WYTProj/DPlayer/dist/DPlayer.min.js"></script>
+
+  <script>
+  const Dash_api = 'http://localhost:8080/dash';
+  const dp = new DPlayer({
+    container: document.getElementById('dplayer'),
+    autoplay: true,
+    logo: './icon/cute.jpg',
+    video: {
+      quality:[
+        {
+          name:'high',
+          url: `${Dash_api}/yutong_hi/index.mpd`,
+          type: 'dash'
+        },
+        {
+          name:'median',
+          url: `${Dash_api}/yutong_med/index.mpd`,
+          type: 'dash'
+        },
+        {
+          name:'low',
+          url: `${Dash_api}/yutong_low/index.mpd`,
+          type: 'dash'
+        }],
+      defaultQuality: 0,
+    }
+  });
+
+
+  </script>
+
+  </body>
+
+  </html>
