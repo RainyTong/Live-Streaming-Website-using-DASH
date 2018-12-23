@@ -1,2 +1,3 @@
 # SUSTech-Live-Streaming-Website-using-DASH
-CS305 Computer Network final project of Live Streaming Website using DASH.
+
+Final Course Project for CS305 Computer Network  Fall 2018.
